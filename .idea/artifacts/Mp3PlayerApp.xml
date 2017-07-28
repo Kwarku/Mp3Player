@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="Mp3PlayerApp">
+    <output-path>$PROJECT_DIR$/out/artifacts/Mp3PlayerApp</output-path>
+    <root id="root">
+      <element id="archive" name="Mp3Player.jar">
+        <element id="module-output" name="Mp3Player" />
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+        </element>
+        <element id="library" level="project" name="jid3lib-0.5.4" />
+        <element id="library" level="project" name="jid3lib-0.5.41" />
+      </element>
+    </root>
+  </artifact>
+</component>

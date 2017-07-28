@@ -1,0 +1,35 @@
+/* Tło przycisków */
+#play{
+    -fx-background-image: url("../res/play.png");
+}
+#prev{
+    -fx-background-image: url("../res/prev.png");
+}
+#next{
+    -fx-background-image: url("../res/next.png");
+}
+
+.button, .toggle-button{
+    -fx-background-repeat: no-repeat;   /*  zeby sie nie powtarzaly */
+    -fx-background-position: center;    /* wysrodkowanie */
+    -fx-background-size: 70% 70%;       /* zajmuja mniej niz cale miejsce guzikla */
+    -fx-background-color: transparent;  /* sa przeswitujace  */
+    -fx-opacity: 40%;                   /* podswirtlenie na 40%  */
+}
+
+/* przyciski po najechaniu  */
+.button:hover,
+.toggle-button:hover,
+.toggle-button:selected {
+    -fx-opacity: 100%;                  /*  po najechaniu na przyciski zmieniaja podswietlenie na 100% */
+}
+
+
+
+
+/*.menu-bar,.menu-item, .table-view, .table-column{
+    -fx-background-color: #d3d1d3;
+  !*  -fx-text-fill: white;*!
+    -fx-border-color: #d3d1d3;
+
+}*/
