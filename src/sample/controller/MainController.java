@@ -139,6 +139,8 @@ public class MainController implements Initializable {
             }
         });
 
+
+
         //poprzednia piosenka
         prevButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -151,6 +153,7 @@ public class MainController implements Initializable {
 
     //sterowanie sliderem piosenki
     private void configureProgressBar(){
+        TableView<Mp3Song> contentTable = contentPaneController.getContentTable();
         Slider songSlider = controlPaneController.getSongSlider();
         mp3Player.getMediaPlayer().setOnReady(new Runnable() {
             @Override
@@ -163,6 +166,15 @@ public class MainController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends Duration> observable, Duration oldValue, Duration newValue) {
                 songSlider.setValue(newValue.toSeconds());      // ustawienie obecnego polozenia slidera na obecna dlugosc piosenki
+                //z tego co mi sie wydaje to bedzie zmianielo piosenke gdy konczy sie
+
+
+
+                if (songSlider.getMax() == songSlider.getValue()){
+
+                    contentTable.getSelectionModel().select(contentTable.getSelectionModel().getSelectedIndex() + 1);
+                    mp3Player.loadSong(contentTable.getSelectionModel().getSelectedIndex());
+                }
             }
         });
         songSlider.valueProperty().addListener(new ChangeListener<Number>() {
@@ -171,6 +183,7 @@ public class MainController implements Initializable {
                     // przesuniecie slidera piosenki i jednoczesne sprawdzenie czy wartosci sie zmienia, to powoduje przycinanie piosenki xD
                 if (songSlider.isValueChanging())
                 mp3Player.getMediaPlayer().seek(Duration.seconds(newValue.doubleValue()));
+
             }
         });
     }

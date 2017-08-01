@@ -9,6 +9,9 @@ public class Mp3Song {
     private StringProperty album;
     private String filePath;
 
+
+
+
     public String getTitle() {
         return title.get();
     }
@@ -58,6 +61,7 @@ public class Mp3Song {
         this.title = new SimpleStringProperty();
         this.author = new SimpleStringProperty();
         this.album = new SimpleStringProperty();
+
     }
 
     @Override

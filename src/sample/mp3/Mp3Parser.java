@@ -27,6 +27,7 @@ public class Mp3Parser {
             result.setAuthor(mp3File.getID3v2Tag().getLeadArtist());
             result.setAlbum(mp3File.getID3v2Tag().getAlbumTitle());
 
+
             return result;
     }
 

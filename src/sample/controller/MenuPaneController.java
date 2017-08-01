@@ -60,6 +60,8 @@ public class MenuPaneController implements Initializable {
 
 
     private void configureMenu(){
+
+
             //obsluga zamkniecia okna about
         closeMenuItem.setOnAction(x -> Platform.exit());
 

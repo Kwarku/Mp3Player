@@ -26,6 +26,8 @@ public class ContentPaneController implements Initializable {
     public static final String TITLE_COLUMN = "Tytuł";
     public static final String AUTHOR_COLUMN = "Autor";
     public static final String ALBUM_COLUMN = "Album";
+
+
     //utworzenie nowego obiektu
     private Mp3Collection mp3collection;
 
@@ -60,8 +62,12 @@ public class ContentPaneController implements Initializable {
         TableColumn<Mp3Song, String> albumColumn = new TableColumn<Mp3Song, String>(ALBUM_COLUMN);
         albumColumn.setCellValueFactory(new PropertyValueFactory<>("album"));
 
+
+
+
         contentTable.getColumns().add(titleColumn);
         contentTable.getColumns().add(authorColumn);
         contentTable.getColumns().add(albumColumn);
+
     }
 }
